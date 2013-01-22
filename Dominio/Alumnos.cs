@@ -190,5 +190,13 @@ namespace Dominio
             get { return nombreFliaAutorizada; }
             set { nombreFliaAutorizada = value; }
         }
+
+        private int cantHermanos;
+
+        public int CantHermanos
+        {
+            get { return cantHermanos; }
+            set { cantHermanos = value; }
+        }
     }
 }
