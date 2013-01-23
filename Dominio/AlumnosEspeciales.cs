@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Dominio
 {
-    public class AlumnosEspeciales
+    public class AlumnosEspeciales:Alumnos
     {
         private string nombre;
 

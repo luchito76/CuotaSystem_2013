@@ -165,15 +165,7 @@ namespace Dominio
         {
             get { return pagaMatricula; }
             set { pagaMatricula = value; }
-        }
-        
-        private bool tieneHermanos;
-
-        public bool TieneHermanos
-        {
-            get { return tieneHermanos; }
-            set { tieneHermanos = value; }
-        }
+        }       
         
         private Hermanos nombreHermano;
 
