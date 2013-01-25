@@ -46,6 +46,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepoAlumno.cs" />
     <Compile Include="RepoCursos.cs" />
+    <Compile Include="RepoEscuela.cs" />
+    <Compile Include="RepoFliaAutorizada.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dominio\Dominio.csproj">

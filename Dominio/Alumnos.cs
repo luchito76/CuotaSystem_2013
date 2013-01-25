@@ -7,6 +7,14 @@ namespace Dominio
 {
     public class Alumnos
     {
+        private int idAlumno;
+
+        public int IdAlumno
+        {
+            get { return idAlumno; }
+            set { idAlumno = value; }
+        }
+
         private string nombre;
 
         public string Nombre

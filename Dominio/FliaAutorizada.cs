@@ -21,26 +21,42 @@ namespace Dominio
             get { return apellido; }
             set { apellido = value; }
         }
-        private int dni;
+        private Decimal dni;
 
-        public int Dni
+        public Decimal Dni
         {
             get { return dni; }
             set { dni = value; }
         }
-        private int telefonoFijo;
+        private Decimal telefonoFijo;
 
-        public int TelefonoFijo
+        public Decimal TelefonoFijo
         {
             get { return telefonoFijo; }
             set { telefonoFijo = value; }
         }
-        private int telefonoCelular;
+        private Decimal telefonoCelular;
 
-        public int TelefonoCelular
+        public Decimal TelefonoCelular
         {
             get { return telefonoCelular; }
             set { telefonoCelular = value; }
+        }
+
+        private string relacion;
+
+        public string Relacion
+        {
+            get { return relacion; }
+            set { relacion = value; }
+        }
+
+        private Alumnos alumno;
+
+        public Alumnos Alumno
+        {
+            get { return alumno; }
+            set { alumno = value; }
         }
     }
 }

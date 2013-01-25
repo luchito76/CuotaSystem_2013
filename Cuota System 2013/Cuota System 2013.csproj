@@ -58,6 +58,12 @@
     <Compile Include="FormAltaCursos.Designer.cs">
       <DependentUpon>FormAltaCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormFliaAutorizada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFliaAutorizada.Designer.cs">
+      <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
+    </Compile>
     <Compile Include="Funciones\Funciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +72,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAltaCursos.resx">
       <DependentUpon>FormAltaCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFliaAutorizada.resx">
+      <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,6 +124,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\empresariales-500.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Reingenieria Empresarial.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
