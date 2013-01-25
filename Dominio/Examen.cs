@@ -7,9 +7,9 @@ namespace Dominio
 {
     public class Examen
     {
-        private int valorExamen;
+        private Decimal valorExamen;
 
-        public int ValorExamen
+        public Decimal ValorExamen
         {
             get { return valorExamen; }
             set { valorExamen = value; }

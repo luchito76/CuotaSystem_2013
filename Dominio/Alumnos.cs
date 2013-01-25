@@ -190,5 +190,21 @@ namespace Dominio
             get { return cantHermanos; }
             set { cantHermanos = value; }
         }
+
+        private string grupoFamiliar;
+
+        public string GrupoFamiliar
+        {
+            get { return grupoFamiliar; }
+            set { grupoFamiliar = value; }
+        }
+
+        private int idGrupoFamiliar;
+
+        public int IdGrupoFamiliar
+        {
+            get { return idGrupoFamiliar; }
+            set { idGrupoFamiliar = value; }
+        }
     }
 }

@@ -60,9 +60,44 @@ namespace Cuota_System_2013.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Aceptar_ico {
+            get {
+                object obj = ResourceManager.GetObject("Aceptar_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Aceptar_ico1 {
+            get {
+                object obj = ResourceManager.GetObject("Aceptar_ico1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Cancelar_ico {
+            get {
+                object obj = ResourceManager.GetObject("Cancelar_ico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap empresariales_500 {
+            get {
+                object obj = ResourceManager.GetObject("empresariales-500", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Fondo_20132 {
             get {
                 object obj = ResourceManager.GetObject("Fondo_20132", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Volver_ico {
+            get {
+                object obj = ResourceManager.GetObject("Volver_ico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

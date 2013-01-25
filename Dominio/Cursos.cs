@@ -7,6 +7,14 @@ namespace Dominio
 {
     public class Cursos
     {
+        private int idCurso;
+
+        public int IdCurso
+        {
+            get { return idCurso; }
+            set { idCurso = value; }
+        }
+
         private string descripcion;
 
         public string Descripcion
@@ -14,9 +22,9 @@ namespace Dominio
             get { return descripcion; }
             set { descripcion = value; }
         }
-        private int montoCuota;
+        private Decimal montoCuota;
 
-        public int MontoCuota
+        public Decimal MontoCuota
         {
             get { return montoCuota; }
             set { montoCuota = value; }

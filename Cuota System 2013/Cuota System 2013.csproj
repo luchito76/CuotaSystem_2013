@@ -52,10 +52,20 @@
     <Compile Include="FormAltaAlumno.Designer.cs">
       <DependentUpon>FormAltaAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAltaCursos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAltaCursos.Designer.cs">
+      <DependentUpon>FormAltaCursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones\Funciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAltaAlumno.resx">
       <DependentUpon>FormAltaAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAltaCursos.resx">
+      <DependentUpon>FormAltaCursos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -67,6 +77,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,9 +88,33 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Dominio\Dominio.csproj">
+      <Project>{F13FA9F9-B27A-4ADA-B901-7DC51BCE1852}</Project>
+      <Name>Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositorio\Repositorio.csproj">
+      <Project>{3C9EBD6C-C056-4510-B9CA-EBB29B0C62B0}</Project>
+      <Name>Repositorio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Fondo_2013.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aceptar_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cancelar_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Volver_ico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\empresariales-500.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

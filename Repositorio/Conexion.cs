@@ -12,8 +12,9 @@ namespace Repositorio
 {
     public class Conexion
     {
-        //public static string parametros = "DATA SOURCE = PRAGMAWS148; Initial Catalog = Cuotas; Integrated Security = yes";
+        //public static string parametro = "DATA SOURCE = FANTASIA\\SQLEXPRESS1; Initial Catalog = cuotas2013; Integrated Security = yes";
         public static string parametro = ConfigurationManager.ConnectionStrings["parametro"].ConnectionString;
+        
 
         public static SqlConnection conexion;
 

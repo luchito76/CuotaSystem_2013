@@ -255,11 +255,14 @@
             // 
             this.btn_aceptar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_aceptar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_aceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_aceptar.Image = global::Cuota_System_2013.Properties.Resources.Aceptar_ico1;
             this.btn_aceptar.Location = new System.Drawing.Point(499, 393);
             this.btn_aceptar.Name = "btn_aceptar";
             this.btn_aceptar.Size = new System.Drawing.Size(57, 45);
             this.btn_aceptar.TabIndex = 11;
             this.btn_aceptar.UseVisualStyleBackColor = true;
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
             // groupBox2
             // 
@@ -307,21 +310,25 @@
             // 
             this.btn_cancelar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_cancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_cancelar.Image = global::Cuota_System_2013.Properties.Resources.Cancelar_ico;
             this.btn_cancelar.Location = new System.Drawing.Point(593, 393);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(57, 45);
             this.btn_cancelar.TabIndex = 12;
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_volver
             // 
             this.btn_volver.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_volver.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_volver.Image = global::Cuota_System_2013.Properties.Resources.Volver_ico;
             this.btn_volver.Location = new System.Drawing.Point(687, 393);
             this.btn_volver.Name = "btn_volver";
             this.btn_volver.Size = new System.Drawing.Size(57, 45);
             this.btn_volver.TabIndex = 13;
             this.btn_volver.UseVisualStyleBackColor = true;
+            this.btn_volver.Click += new System.EventHandler(this.btn_volver_Click);
             // 
             // lbl_fecha_inscripcion
             // 
@@ -409,6 +416,7 @@
             this.txt_dni.Name = "txt_dni";
             this.txt_dni.Size = new System.Drawing.Size(119, 27);
             this.txt_dni.TabIndex = 2;
+            this.txt_dni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dni_KeyPress);
             // 
             // label20
             // 
@@ -554,6 +562,7 @@
             this.dtp_fecha_nac.Name = "dtp_fecha_nac";
             this.dtp_fecha_nac.Size = new System.Drawing.Size(117, 27);
             this.dtp_fecha_nac.TabIndex = 10;
+            this.dtp_fecha_nac.Leave += new System.EventHandler(this.dtp_fecha_nac_Leave_1);
             // 
             // txt_mail
             // 
@@ -791,6 +800,7 @@
             this.txt_telefono.Name = "txt_telefono";
             this.txt_telefono.Size = new System.Drawing.Size(156, 27);
             this.txt_telefono.TabIndex = 3;
+            this.txt_telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_telefono_KeyPress);
             // 
             // txt_nombre
             // 
@@ -827,7 +837,9 @@
             this.ClientSize = new System.Drawing.Size(944, 624);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormAltaAlumno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAltaAlumno";
+            this.Load += new System.EventHandler(this.FormAltaAlumno_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picFoto)).EndInit();
