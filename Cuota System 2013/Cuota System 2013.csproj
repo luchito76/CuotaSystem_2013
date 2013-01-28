@@ -65,6 +65,12 @@
       <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
     </Compile>
     <Compile Include="Funciones\Funciones.cs" />
+    <Compile Include="FormModificarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModificarCurso.Designer.cs">
+      <DependentUpon>FormModificarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAltaAlumno.resx">
@@ -76,6 +82,9 @@
     <EmbeddedResource Include="FormFliaAutorizada.resx">
       <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormModificarCurso.resx">
+      <DependentUpon>FormModificarCurso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -86,7 +95,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
