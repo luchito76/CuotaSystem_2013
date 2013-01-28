@@ -30,6 +30,14 @@ namespace Dominio
             get { return apellido; }
             set { apellido = value; }
         }
+
+        private string nombreCompleto;
+
+        public string NombreCompleto
+        {
+            get { return nombreCompleto; }
+            set { nombreCompleto = value; }
+        }
         
         private int nroMatricula;
 
@@ -71,9 +79,9 @@ namespace Dominio
             set { fechaInscripcion = value; }
         }
         
-        private int telefono;
+        private double telefono;
 
-        public int Telefono
+        public double Telefono
         {
             get { return telefono; }
             set { telefono = value; }
@@ -127,9 +135,9 @@ namespace Dominio
             set { turno = value; }
         }
         
-        private string grado;
+        private GradosEscuela grado;
 
-        public string Grado
+        public GradosEscuela Grado
         {
             get { return grado; }
             set { grado = value; }

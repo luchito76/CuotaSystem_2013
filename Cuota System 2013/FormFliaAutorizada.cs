@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Dominio;
-using Repositorio;
+using Negocio;
 
 namespace Cuota_System_2013
 {
@@ -18,11 +18,13 @@ namespace Cuota_System_2013
             InitializeComponent();
         }
 
+        FliaAutorizada flia = new FliaAutorizada();
+        Alumnos alumno = new Alumnos();
+        NegoFliaAutorizada negFlia = new NegoFliaAutorizada();
+        NegoAlumno negAlumnos = new NegoAlumno();
+
         private void btn_autorizados_Click(object sender, EventArgs e)
         {
-            FliaAutorizada flia = new FliaAutorizada();
-            Alumnos alumno = new Alumnos();
-
             flia.Alumno = alumno;
 
             flia.Nombre = txt_nombre.Text;
@@ -32,10 +34,20 @@ namespace Cuota_System_2013
             flia.TelefonoFijo = Convert.ToDecimal(txt_tel_fijo.Text);
             flia.TelefonoCelular = Convert.ToDecimal(txt_tel_celular.Text);
             flia.Alumno.IdAlumno = 33;
-
-            RepoFliaAutorizada fliaAutorizada = new RepoFliaAutorizada();
-            fliaAutorizada.altaFliaUtorizada(flia);
             
+            negFlia.altaFliarAutorizado(flia);
+            
+        }
+
+        public void mustraALumno() {
+            cmb_alumno.DisplayMember = "nombreCompleto";
+            cmb_alumno.ValueMember = "idAlumno";
+            cmb_alumno.DataSource = negAlumnos.listadoDeAlumnos();      
+        }
+
+        private void FormFliaAutorizada_Load(object sender, EventArgs e)
+        {
+            mustraALumno();
         }
     }
 }

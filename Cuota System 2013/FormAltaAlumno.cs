@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Dominio;
-using Repositorio;
+using Negocio;
 
 namespace Cuota_System_2013
 {
@@ -18,13 +18,40 @@ namespace Cuota_System_2013
             InitializeComponent();
         }
 
+        NegoAlumno negAlumno = new NegoAlumno();
+        NegoCursos negCurso = new NegoCursos();
+        NegoEscuela negEscuela = new NegoEscuela();
+        NegoGrados negGrados = new NegoGrados();
+
         private void FormAltaAlumno_Load(object sender, EventArgs e)
         {
             datosIniciales();
             toolTips();
+
+            muestraCursos();
+            muestraEscuelas();
+            muestraGrados();            
+        }
+        
+        public void muestraCursos() {
+            cmb_curso.DisplayMember = "Descripcion";
+            cmb_curso.ValueMember = "IdCurso";
+            cmb_curso.DataSource = negCurso.listadoDeCursos();
         }
 
-        private int tienePlanillaSanitaria(RadioButton check) {
+        public void muestraEscuelas() {
+            cmb_escuela.DisplayMember = "nombreEscuela";
+            cmb_escuela.ValueMember = "idEscuela";
+            cmb_escuela.DataSource = negEscuela.listadoDeEscuelas();
+        }
+
+        public void muestraGrados() {
+            cmb_año_en_curso.DisplayMember = "descripcion";
+            cmb_año_en_curso.ValueMember = "IdGrados";
+            cmb_año_en_curso.DataSource = negGrados.listadoDeGrados();
+        }
+
+        private int compruebaRadioButton(RadioButton check) {
             if (check.Checked)
             {
                 return 1;
@@ -39,37 +66,44 @@ namespace Cuota_System_2013
             return 0;
         }
 
+        public int generaMatricula() {
+            return negAlumno.generaNroMatricula();
+        }
+
         private void btn_aceptar_Click(object sender, EventArgs e)
         {
             Alumnos alumno = new Alumnos();
-            Cursos cur = new Cursos();
+            Cursos curso = new Cursos();
             Escuela escuela = new Escuela();
-            RepoAlumno repoALumno = new RepoAlumno();
+            GradosEscuela grados = new GradosEscuela();
 
+            alumno.Curso = curso;
+            alumno.Escuela = escuela;
+            alumno.Grado = grados;
+            
             alumno.Nombre = txt_nombre.Text;
             alumno.Apellido = txt_apellido.Text;
-            alumno.NroMatricula = 1;
+            alumno.NroMatricula = negAlumno.generaNroMatricula();
             alumno.Dni = Convert.ToInt32(txt_dni.Text);
-            alumno.Telefono = Convert.ToInt32(txt_telefono.Text);
+            alumno.Telefono = Convert.ToDouble(txt_telefono.Text);
             alumno.Mail = txt_mail.Text;
             alumno.Direccion = txt_direccion.Text;
-            alumno.Escuela = escuela;
-            alumno.Escuela.IdEscuela = 1;
-            alumno.Turno = "Tarde";
-            alumno.Grado = "5 grado";
+            alumno.Escuela.IdEscuela = Convert.ToInt16(cmb_escuela.SelectedValue);
+            alumno.Turno = cmb_turno.SelectedItem.ToString();
+            alumno.Grado.IdGrados = Convert.ToInt16(cmb_año_en_curso.SelectedValue);
             alumno.NomPadre = txt_nomPadre.Text;
             alumno.NomMadre = txt_nomMadre.Text;
             alumno.FechaInscripcion = DateTime.Today;
             alumno.FechaNacimiento = DateTime.Today;
-            cur.IdCurso = 1;
-            alumno.PlanillaSanitaria = Convert.ToBoolean(tienePlanillaSanitaria(rbt_SI));
-            alumno.RindeExamen = Convert.ToBoolean(tienePlanillaSanitaria(rbt_rinde_SI));
-            alumno.PagaMatricula = Convert.ToBoolean(tienePlanillaSanitaria(rbt_matrSI));
+            alumno.Curso.IdCurso = Convert.ToInt16(cmb_curso.SelectedValue);
+            alumno.PlanillaSanitaria = Convert.ToBoolean(compruebaRadioButton(rbt_SI));
+            alumno.RindeExamen = Convert.ToBoolean(compruebaRadioButton(rbt_rinde_SI));
+            alumno.PagaMatricula = Convert.ToBoolean(compruebaRadioButton(rbt_matrSI));
             alumno.Activo = true; //Al darse de alta el alumno queda activ por defecto.
             alumno.CantHermanos = cuentaHermanos();
             alumno.IdGrupoFamiliar = 1;
-
-            repoALumno.AltaAlumnos(alumno, cur);
+            
+            negAlumno.altaALumno(alumno);
 
             Funciones.Funciones limpiar = new Funciones.Funciones();
             limpiar.limpiarCampos(groupBox1, txt_nombre);
@@ -79,7 +113,7 @@ namespace Cuota_System_2013
         private void datosIniciales() {
             txt_nombre.Focus();
             txt_dni.MaxLength = 9;
-            txt_telefono.MaxLength = 10;
+            txt_telefono.MaxLength = 11;
             rbt_no.Checked = true;
             rbt_rinde_NO.Checked = true;
             rbt_matrNO.Checked = true;
@@ -118,10 +152,10 @@ namespace Cuota_System_2013
             TimeSpan edad = hoy - fechaNac;
             total = edad.Days;
             anos = total / 365;
-            MessageBox.Show("Años " + anos.ToString());
+            
             if (anos < 18)
             {
-                grp_datosEspeciales.Show();
+                grp_datosEspeciales.Show();                
             }
         }
 
@@ -158,5 +192,6 @@ namespace Cuota_System_2013
         {
             campoSoloNumeros(e);
         }
+        
     }
 }

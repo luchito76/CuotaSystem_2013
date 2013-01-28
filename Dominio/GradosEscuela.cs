@@ -7,6 +7,14 @@ namespace Dominio
 {
     public class GradosEscuela
     {
+        private int idGrados;
+
+        public int IdGrados
+        {
+            get { return idGrados; }
+            set { idGrados = value; }
+        }
+
         private string descripcion;
 
         public string Descripcion

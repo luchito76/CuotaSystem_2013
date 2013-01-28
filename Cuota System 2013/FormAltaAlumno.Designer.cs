@@ -526,6 +526,7 @@
             this.rbt_no.TabStop = true;
             this.rbt_no.Text = "No";
             this.rbt_no.UseVisualStyleBackColor = false;
+            
             // 
             // rbt_SI
             // 

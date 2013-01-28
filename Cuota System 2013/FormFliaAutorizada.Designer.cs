@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_Relacion = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.cmb_alumno = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.pictur_logo = new System.Windows.Forms.PictureBox();
@@ -45,8 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_volver = new System.Windows.Forms.Button();
             this.btn_autorizados = new System.Windows.Forms.Button();
-            this.txt_Relacion = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictur_logo)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,22 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alta de Familiares Autorizados";
+            // 
+            // txt_Relacion
+            // 
+            this.txt_Relacion.Location = new System.Drawing.Point(198, 124);
+            this.txt_Relacion.Name = "txt_Relacion";
+            this.txt_Relacion.Size = new System.Drawing.Size(160, 27);
+            this.txt_Relacion.TabIndex = 38;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(71, 124);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(77, 19);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Relación";
             // 
             // cmb_alumno
             // 
@@ -216,22 +232,6 @@
             this.btn_autorizados.UseVisualStyleBackColor = true;
             this.btn_autorizados.Click += new System.EventHandler(this.btn_autorizados_Click);
             // 
-            // txt_Relacion
-            // 
-            this.txt_Relacion.Location = new System.Drawing.Point(198, 124);
-            this.txt_Relacion.Name = "txt_Relacion";
-            this.txt_Relacion.Size = new System.Drawing.Size(160, 27);
-            this.txt_Relacion.TabIndex = 38;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(71, 124);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(77, 19);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Relación";
-            // 
             // FormFliaAutorizada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +240,9 @@
             this.ClientSize = new System.Drawing.Size(944, 624);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormFliaAutorizada";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormFliaAutorizada";
+            this.Load += new System.EventHandler(this.FormFliaAutorizada_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictur_logo)).EndInit();

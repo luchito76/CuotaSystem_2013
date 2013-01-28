@@ -29,5 +29,25 @@ namespace Repositorio
                 MessageBox.Show(respuesta);
             }
         }
+
+        public List<Escuela> listadoDeEscuela() {
+            List<Escuela> traeEscuela = new List<Escuela>();
+            string queryEscuela = "select * from escuela";
+
+            if (Conexion.conectar()) {
+                DataTable dtEscuela = new DataTable();
+                dtEscuela = Conexion.LeerTabla(queryEscuela);
+
+                foreach (DataRow row in dtEscuela.Rows) {
+                    Escuela escuela = new Escuela();
+
+                    escuela.IdEscuela = Convert.ToInt16(row["idEscuela"]);
+                    escuela.NombreEscuela = row["nombre"].ToString();
+                    traeEscuela.Add(escuela);
+                }
+            }
+
+            return traeEscuela;
+        }
     }
 }

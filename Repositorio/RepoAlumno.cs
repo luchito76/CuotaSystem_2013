@@ -11,10 +11,8 @@ namespace Repositorio
 {
     public class RepoAlumno
     {
-        public void AltaAlumnos(Alumnos alumno, Cursos curso) {
+        public void AltaAlumnos(Alumnos alumno) {
             if (Conexion.conectar()) {
-                alumno.Curso = curso;
-
                 SqlCommand cmdAlumno = new SqlCommand("altaAlumnos", Conexion.conexion);
                 cmdAlumno.CommandType = CommandType.StoredProcedure;
 
@@ -25,7 +23,7 @@ namespace Repositorio
                 cmdAlumno.Parameters.Add("@dni", SqlDbType.Int);
                 cmdAlumno.Parameters.Add("@fechaNacimiento", SqlDbType.DateTime);
                 cmdAlumno.Parameters.Add("@fechaInscripcion", SqlDbType.DateTime);
-                cmdAlumno.Parameters.Add("@telefono", SqlDbType.Int);
+                cmdAlumno.Parameters.Add("@telefono", SqlDbType.Float);
                 cmdAlumno.Parameters.Add("@idcurso", SqlDbType.Int);
                 cmdAlumno.Parameters.Add("@mail", SqlDbType.NVarChar);
                 cmdAlumno.Parameters.Add("@nomPadre", SqlDbType.NVarChar);
@@ -38,7 +36,7 @@ namespace Repositorio
                 cmdAlumno.Parameters.Add("@cantHermanos", SqlDbType.Int);
                 cmdAlumno.Parameters.Add("@activo", SqlDbType.Bit);
                 cmdAlumno.Parameters.Add("@idGrupo", SqlDbType.Int);
-                cmdAlumno.Parameters.Add("@grado", SqlDbType.NVarChar);
+                cmdAlumno.Parameters.Add("@grado", SqlDbType.Int);
                 cmdAlumno.Parameters.Add("@msg", SqlDbType.NVarChar, 100);
 
                 cmdAlumno.Parameters["@msg"].Direction = ParameterDirection.Output;
@@ -64,17 +62,54 @@ namespace Repositorio
                 cmdAlumno.Parameters[17].Value = alumno.CantHermanos;
                 cmdAlumno.Parameters[18].Value = alumno.Activo;
                 cmdAlumno.Parameters[19].Value = alumno.IdGrupoFamiliar;
-                cmdAlumno.Parameters[20].Value = alumno.Grado;
+                cmdAlumno.Parameters[20].Value = alumno.Grado.IdGrados;
                 cmdAlumno.Parameters[21].Value = "";
 
                 cmdAlumno.ExecuteNonQuery();
 
                 string respuesta = cmdAlumno.Parameters["@msg"].Value.ToString();
-                MessageBox.Show(respuesta);
-                
-
-                
+                MessageBox.Show(respuesta);               
             }
         }
+
+        public List<Alumnos> listadoDeAlumnos() {
+            List<Alumnos> traeAlumnos = new List<Alumnos>();
+
+            string queryAlumnos = "select * from alumnos where activo = 1";
+
+            if (Conexion.conectar()) {
+                DataTable dtAlumnos = new DataTable();
+                dtAlumnos = Conexion.LeerTabla(queryAlumnos);
+
+                foreach (DataRow row in dtAlumnos.Rows) {
+                    Alumnos alumno = new Alumnos();
+
+                    alumno.IdAlumno = Convert.ToInt16(row["idAlumno"]);
+                    alumno.NombreCompleto = row["nombre"].ToString() + " " + row["apellido"].ToString();
+                    alumno.Activo = Convert.ToBoolean(row["activo"]);
+                    traeAlumnos.Add(alumno);
+                }
+            }
+
+            return traeAlumnos;
+        }
+
+        public int generaMatricula() {
+            int ultimoNroMatricula = 0;
+
+            string queryMatricula = "select max(nroMatricula) from alumnos";
+
+            if (Conexion.conectar()) {
+                DataTable dtMatricula = new DataTable();
+                dtMatricula = Conexion.LeerTabla(queryMatricula);
+
+                foreach (DataRow row in dtMatricula.Rows) {
+                    ultimoNroMatricula = Convert.ToInt16(row[0]);
+                }
+            }
+
+            return ultimoNroMatricula;
+        }
+        
     }
 }

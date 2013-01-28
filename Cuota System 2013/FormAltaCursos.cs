@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Dominio;
-using Repositorio;
+using Negocio;
 
 namespace Cuota_System_2013
 {
@@ -17,6 +17,7 @@ namespace Cuota_System_2013
         {
             InitializeComponent();
         }
+        NegoCursos negoCurso = new NegoCursos();
 
         private void btn_cursos_Click(object sender, EventArgs e)
         {
@@ -33,9 +34,8 @@ namespace Cuota_System_2013
             curso.Examen.ValorExamen = Convert.ToDecimal(txt_montoExamen.Text);
             curso.FechaInicio = Convert.ToDateTime(dtp_fInicio.Text);
             curso.FechaFin = Convert.ToDateTime(dtp_fFin.Text);
-
-            RepoCursos repoCurso = new RepoCursos();
-            repoCurso.altaCurso(curso);
+            
+            negoCurso.crearCurso(curso);
 
             Funciones.Funciones limpiar = new Funciones.Funciones();
             limpiar.limpiarCampos(grp_altaCurso, txt_descripcion);
@@ -44,7 +44,7 @@ namespace Cuota_System_2013
         
         private void FormAltaCursos_Load(object sender, EventArgs e)
         {
-            txt_descripcion.Focus();
+            txt_descripcion.Focus();           
         }
     }
 }

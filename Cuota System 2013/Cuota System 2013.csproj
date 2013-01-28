@@ -102,9 +102,9 @@
       <Project>{F13FA9F9-B27A-4ADA-B901-7DC51BCE1852}</Project>
       <Name>Dominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Repositorio\Repositorio.csproj">
-      <Project>{3C9EBD6C-C056-4510-B9CA-EBB29B0C62B0}</Project>
-      <Name>Repositorio</Name>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{A84CE8F8-2E01-45CB-8B2C-7815733BF582}</Project>
+      <Name>Negocio</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
