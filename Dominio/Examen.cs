@@ -14,5 +14,10 @@ namespace Dominio
             get { return valorExamen; }
             set { valorExamen = value; }
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0}", ValorExamen.ToString("C2"));
+        }
     }
 }

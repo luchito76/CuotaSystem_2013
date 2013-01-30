@@ -24,13 +24,12 @@ namespace Cuota_System_2013
             Cursos curso = new Cursos();
             Matricula matricula = new Matricula();
             Examen examen = new Examen();
-
+            curso.Matricula = matricula;
+            curso.Examen = examen;
 
             curso.Descripcion = txt_descripcion.Text;
-            curso.MontoCuota = Convert.ToDecimal(txt_cuota.Text);
-            curso.Matricula = matricula;
-            curso.Matricula.ValorMatricula = Convert.ToDecimal(txt_matricula.Text);
-            curso.Examen = examen;
+            curso.MontoCuota = Convert.ToDecimal(txt_cuota.Text);            
+            curso.Matricula.ValorMatricula = Convert.ToDecimal(txt_matricula.Text);            
             curso.Examen.ValorExamen = Convert.ToDecimal(txt_montoExamen.Text);
             curso.FechaInicio = Convert.ToDateTime(dtp_fInicio.Text);
             curso.FechaFin = Convert.ToDateTime(dtp_fFin.Text);

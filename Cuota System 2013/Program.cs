@@ -15,7 +15,7 @@ namespace Cuota_System_2013
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormModificarCurso());
+            Application.Run(new FormConsultarCurso());
         }
     }
 }

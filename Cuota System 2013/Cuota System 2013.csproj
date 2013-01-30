@@ -58,19 +58,25 @@
     <Compile Include="FormAltaCursos.Designer.cs">
       <DependentUpon>FormAltaCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultarCurso.Designer.cs">
+      <DependentUpon>FormConsultarCurso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFliaAutorizada.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormFliaAutorizada.Designer.cs">
       <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funciones\Funciones.cs" />
     <Compile Include="FormModificarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormModificarCurso.Designer.cs">
       <DependentUpon>FormModificarCurso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Funciones\Funciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAltaAlumno.resx">
@@ -78,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAltaCursos.resx">
       <DependentUpon>FormAltaCursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarCurso.resx">
+      <DependentUpon>FormConsultarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFliaAutorizada.resx">
       <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
@@ -138,6 +147,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Reingenieria Empresarial.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modif_Curso.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

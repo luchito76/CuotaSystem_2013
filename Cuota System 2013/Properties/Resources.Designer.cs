@@ -95,6 +95,13 @@ namespace Cuota_System_2013.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Modif_Curso {
+            get {
+                object obj = ResourceManager.GetObject("Modif_Curso", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Reingenieria_Empresarial {
             get {
                 object obj = ResourceManager.GetObject("Reingenieria Empresarial", resourceCulture);

@@ -7,6 +7,8 @@ namespace Dominio
 {
     public class Cursos
     {
+        
+
         private int idCurso;
 
         public int IdCurso
@@ -50,6 +52,7 @@ namespace Dominio
             get { return examen; }
             set { examen = value; }
         }
+
         private Matricula matricula;
 
         public Matricula Matricula

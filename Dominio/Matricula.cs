@@ -14,5 +14,10 @@ namespace Dominio
             get { return valorMatricula; }
             set { valorMatricula = value; }
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0}", ValorMatricula.ToString("C2"));
+        }
     }
 }

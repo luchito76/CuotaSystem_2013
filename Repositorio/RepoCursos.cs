@@ -48,22 +48,24 @@ namespace Repositorio
 
             if (Conexion.conectar()) {
                 DataTable dtCasos = new DataTable();
-                dtCasos = Conexion.LeerTabla(queryCursos);
-                Matricula mat = new Matricula();
-                Examen exa = new Examen();
+                dtCasos = Conexion.LeerTabla(queryCursos);                
                 
                 foreach (DataRow row in dtCasos.Rows) {
+                    Matricula matri = new Matricula();
+                    Examen examen = new Examen();
                     Cursos curso = new Cursos();
-                    curso.Examen = exa;
-                    curso.Matricula = mat;
+                    curso.Matricula = matri;
+                    curso.Examen = examen;
+
 
                     curso.IdCurso = Convert.ToInt16(row["idCurso"]);                    
                     curso.Descripcion = row["nombre"].ToString();
                     curso.MontoCuota = Convert.ToDecimal(row["montoCuota"]);
-                    curso.Matricula.ValorMatricula = Convert.ToDecimal(row["montoMatricula"]);
+                    curso.Matricula.ValorMatricula = Convert.ToDecimal(row["montoMatricula"]);                    
                     curso.Examen.ValorExamen = Convert.ToDecimal(row["montoExamen"]);
                     curso.FechaInicio = Convert.ToDateTime(row["fechaInicio"]);
-                    curso.FechaFin = Convert.ToDateTime(row["fechaFin"]);
+                    curso.FechaFin = Convert.ToDateTime(row["fechaFin"]);                    
+                    
                     traeCursos.Add(curso);
                 }
             }
