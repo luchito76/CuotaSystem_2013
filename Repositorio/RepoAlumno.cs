@@ -83,10 +83,13 @@ namespace Repositorio
 
                 foreach (DataRow row in dtAlumnos.Rows) {
                     Alumnos alumno = new Alumnos();
+                    Escuela escuela = new Escuela();
+                    alumno.Escuela = escuela;
 
                     alumno.IdAlumno = Convert.ToInt16(row["idAlumno"]);
                     alumno.NombreCompleto = row["nombre"].ToString() + " " + row["apellido"].ToString();
                     alumno.Activo = Convert.ToBoolean(row["activo"]);
+                    alumno.Escuela.NombreEscuela = row["idEscuela"].ToString();
                     traeAlumnos.Add(alumno);
                 }
             }

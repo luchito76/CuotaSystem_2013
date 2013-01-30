@@ -13,8 +13,8 @@ namespace Repositorio
     public class Conexion
     {
         //public static string parametro = "DATA SOURCE = FANTASIA\\SQLEXPRESS1; Initial Catalog = cuotas2013; Integrated Security = yes";
-        //public static string parametro = ConfigurationManager.ConnectionStrings["parametro"].ConnectionString;
-        public static string parametro1 = ConfigurationManager.ConnectionStrings["parametro1"].ConnectionString;
+        public static string parametro = ConfigurationManager.ConnectionStrings["parametro"].ConnectionString;
+        //public static string parametro1 = ConfigurationManager.ConnectionStrings["parametro1"].ConnectionString;
 
         public static SqlConnection conexion;
 
@@ -22,7 +22,7 @@ namespace Repositorio
         {
             bool conectado = false;
 
-            conexion = new SqlConnection(parametro1);
+            conexion = new SqlConnection(parametro);
 
             try
             {

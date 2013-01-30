@@ -7,9 +7,9 @@ namespace Dominio
 {
     public class Matricula
     {
-        private Decimal valorMatricula;
+        private decimal valorMatricula;
 
-        public Decimal ValorMatricula
+        public decimal ValorMatricula
         {
             get { return valorMatricula; }
             set { valorMatricula = value; }

@@ -58,18 +58,30 @@
     <Compile Include="FormAltaCursos.Designer.cs">
       <DependentUpon>FormAltaCursos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormConsultarAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultarAlumnos.Designer.cs">
+      <DependentUpon>FormConsultarAlumnos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFliaAutorizada.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormFliaAutorizada.Designer.cs">
       <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funciones\Funciones.cs" />
     <Compile Include="FormModificarCurso.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormModificarCurso.Designer.cs">
       <DependentUpon>FormModificarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Funciones\Funciones.cs" />
+    <Compile Include="FormConsultarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConsultarCurso.Designer.cs">
+      <DependentUpon>FormConsultarCurso.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,8 +91,14 @@
     <EmbeddedResource Include="FormAltaCursos.resx">
       <DependentUpon>FormAltaCursos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarAlumnos.resx">
+      <DependentUpon>FormConsultarAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFliaAutorizada.resx">
       <DependentUpon>FormFliaAutorizada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConsultarCurso.resx">
+      <DependentUpon>FormConsultarCurso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormModificarCurso.resx">
       <DependentUpon>FormModificarCurso.cs</DependentUpon>

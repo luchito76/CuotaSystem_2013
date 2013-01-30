@@ -43,28 +43,29 @@ namespace Repositorio
         public List<Cursos> lidtadoDeCuros() {
             List<Cursos> traeCursos = new List<Cursos>();
 
-            //string queryCursos = "select nombre, montoCuota, montoMatricula, montoExamen, fechaInicio, fechaFin from cursos";
+            //string queryCursos = "select idCurso,nombre, montoCuota, montoMatricula, montoExamen, fechaInicio, fechaFin from cursos";
             string queryCursos = "select * from cursos";
 
             if (Conexion.conectar()) {
                 DataTable dtCasos = new DataTable();
                 dtCasos = Conexion.LeerTabla(queryCursos);
-                Matricula mat = new Matricula();
-                Examen exa = new Examen();
+
                 
                 foreach (DataRow row in dtCasos.Rows) {
                     Cursos curso = new Cursos();
-                    curso.Examen = exa;
-                    curso.Matricula = mat;
-
+                    Matricula matri = new Matricula();
+                    curso.Matricula = matri;
+                    matri.ValorMatricula = curso.Matricula.ValorMatricula;
+                    
                     curso.IdCurso = Convert.ToInt16(row["idCurso"]);                    
                     curso.Descripcion = row["nombre"].ToString();
                     curso.MontoCuota = Convert.ToDecimal(row["montoCuota"]);
-                    curso.Matricula.ValorMatricula = Convert.ToDecimal(row["montoMatricula"]);
-                    curso.Examen.ValorExamen = Convert.ToDecimal(row["montoExamen"]);
+                    curso.Matricula.ValorMatricula = Convert.ToDecimal(row["montoCuota"]);
+                    //curso.Matricula.ValorMatricula = Convert.ToDecimal(row["montoMatricula"]);
+                    //curso.Examen.ValorExamen = Convert.ToDecimal(row["montoExamen"]);
                     curso.FechaInicio = Convert.ToDateTime(row["fechaInicio"]);
                     curso.FechaFin = Convert.ToDateTime(row["fechaFin"]);
-                    traeCursos.Add(curso);
+                    traeCursos.Add(curso);                   
                 }
             }
             return traeCursos;

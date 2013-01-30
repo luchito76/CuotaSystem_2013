@@ -5,8 +5,9 @@ using System.Text;
 
 namespace Dominio
 {
-    public class Cursos
+    public class Cursos:Matricula 
     {
+        
         private int idCurso;
 
         public int IdCurso
@@ -22,9 +23,9 @@ namespace Dominio
             get { return descripcion; }
             set { descripcion = value; }
         }
-        private Decimal montoCuota;
+        private decimal montoCuota;
 
-        public Decimal MontoCuota
+        public decimal MontoCuota
         {
             get { return montoCuota; }
             set { montoCuota = value; }

@@ -237,6 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Cuota_System_2013.Properties.Resources.Fondo_20132;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(944, 624);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormFliaAutorizada";
