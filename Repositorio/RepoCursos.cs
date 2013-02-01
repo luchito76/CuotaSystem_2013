@@ -40,6 +40,41 @@ namespace Repositorio
             }
         }
 
+        public void modificarCurso(Cursos curso) {
+            if (Conexion.conectar())
+            {
+                SqlCommand cmd_modCursos = new SqlCommand("modificarCurso", Conexion.conexion);
+                cmd_modCursos.CommandType = CommandType.StoredProcedure;
+
+                cmd_modCursos.Parameters.Add("@idcurso", SqlDbType.Int);
+                cmd_modCursos.Parameters.Add("@nombre", SqlDbType.NVarChar);
+                cmd_modCursos.Parameters.Add("@montoCuota", SqlDbType.Money);
+                cmd_modCursos.Parameters.Add("@montoMatricula", SqlDbType.Money);
+                cmd_modCursos.Parameters.Add("@fechaInicio", SqlDbType.DateTime);
+                cmd_modCursos.Parameters.Add("@fechaFin", SqlDbType.DateTime);
+                cmd_modCursos.Parameters.Add("@montoExamen", SqlDbType.Money);
+                cmd_modCursos.Parameters.Add("@msg", SqlDbType.NVarChar, 100);
+
+                cmd_modCursos.Parameters["@msg"].Direction = ParameterDirection.Output;
+
+                cmd_modCursos.UpdatedRowSource = UpdateRowSource.None;
+                cmd_modCursos.Parameters[0].Value = curso.IdCurso;
+                cmd_modCursos.Parameters[1].Value = curso.Descripcion;
+                cmd_modCursos.Parameters[2].Value = curso.MontoCuota;
+                cmd_modCursos.Parameters[3].Value = curso.Matricula.ValorMatricula;
+                cmd_modCursos.Parameters[4].Value = curso.FechaInicio;
+                cmd_modCursos.Parameters[5].Value = curso.FechaFin; ;
+                cmd_modCursos.Parameters[6].Value = curso.Examen.ValorExamen;
+                cmd_modCursos.Parameters[7].Value = "";
+
+                cmd_modCursos.ExecuteNonQuery();
+
+                string respuesta = cmd_modCursos.Parameters["@msg"].Value.ToString();
+                MessageBox.Show(respuesta);
+
+            }
+        }
+
         public List<Cursos> lidtadoDeCuros() {
             List<Cursos> traeCursos = new List<Cursos>();
 

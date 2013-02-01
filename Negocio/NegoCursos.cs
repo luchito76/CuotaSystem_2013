@@ -15,6 +15,9 @@ namespace Negocio
             repCurso.altaCurso(curso);
         }
 
+        public void modifCurso(Cursos curso) {
+            repCurso.modificarCurso(curso);
+        }
         public List<Cursos> listadoDeCursos() {
             return repCurso.lidtadoDeCuros();
         }

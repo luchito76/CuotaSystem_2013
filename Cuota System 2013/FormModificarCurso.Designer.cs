@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpModificarCurso = new System.Windows.Forms.GroupBox();
             this.txt_montoExamen = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_idCurso = new System.Windows.Forms.Label();
@@ -47,42 +47,42 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_volver = new System.Windows.Forms.Button();
             this.btn_cursos = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.grpModificarCurso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictur_logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grpModificarCurso
             // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.txt_montoExamen);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.lbl_idCurso);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.dtp_fFin);
-            this.groupBox1.Controls.Add(this.dtp_fInicio);
-            this.groupBox1.Controls.Add(this.pictur_logo);
-            this.groupBox1.Controls.Add(this.txt_descripcion);
-            this.groupBox1.Controls.Add(this.txt_cuota);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.txt_matricula);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.btn_volver);
-            this.groupBox1.Controls.Add(this.btn_cursos);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Maroon;
-            this.groupBox1.Location = new System.Drawing.Point(82, 109);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(40);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.groupBox1.Size = new System.Drawing.Size(780, 407);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Modificar datos de los Cursos";
+            this.grpModificarCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grpModificarCurso.BackColor = System.Drawing.Color.Transparent;
+            this.grpModificarCurso.Controls.Add(this.txt_montoExamen);
+            this.grpModificarCurso.Controls.Add(this.label7);
+            this.grpModificarCurso.Controls.Add(this.lbl_idCurso);
+            this.grpModificarCurso.Controls.Add(this.label6);
+            this.grpModificarCurso.Controls.Add(this.dtp_fFin);
+            this.grpModificarCurso.Controls.Add(this.dtp_fInicio);
+            this.grpModificarCurso.Controls.Add(this.pictur_logo);
+            this.grpModificarCurso.Controls.Add(this.txt_descripcion);
+            this.grpModificarCurso.Controls.Add(this.txt_cuota);
+            this.grpModificarCurso.Controls.Add(this.textBox3);
+            this.grpModificarCurso.Controls.Add(this.txt_matricula);
+            this.grpModificarCurso.Controls.Add(this.label5);
+            this.grpModificarCurso.Controls.Add(this.label4);
+            this.grpModificarCurso.Controls.Add(this.label3);
+            this.grpModificarCurso.Controls.Add(this.label2);
+            this.grpModificarCurso.Controls.Add(this.label1);
+            this.grpModificarCurso.Controls.Add(this.btn_volver);
+            this.grpModificarCurso.Controls.Add(this.btn_cursos);
+            this.grpModificarCurso.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpModificarCurso.ForeColor = System.Drawing.Color.Maroon;
+            this.grpModificarCurso.Location = new System.Drawing.Point(82, 109);
+            this.grpModificarCurso.Margin = new System.Windows.Forms.Padding(40);
+            this.grpModificarCurso.Name = "grpModificarCurso";
+            this.grpModificarCurso.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.grpModificarCurso.Size = new System.Drawing.Size(780, 407);
+            this.grpModificarCurso.TabIndex = 1;
+            this.grpModificarCurso.TabStop = false;
+            this.grpModificarCurso.Text = "Modificar datos de los Cursos";
             // 
             // txt_montoExamen
             // 
@@ -90,6 +90,8 @@
             this.txt_montoExamen.Name = "txt_montoExamen";
             this.txt_montoExamen.Size = new System.Drawing.Size(115, 27);
             this.txt_montoExamen.TabIndex = 3;
+            this.txt_montoExamen.Click += new System.EventHandler(this.txt_montoExamen_Click);
+            this.txt_montoExamen.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_montoExamen_KeyPress);
             // 
             // label7
             // 
@@ -160,6 +162,8 @@
             this.txt_cuota.Name = "txt_cuota";
             this.txt_cuota.Size = new System.Drawing.Size(115, 27);
             this.txt_cuota.TabIndex = 1;
+            this.txt_cuota.Click += new System.EventHandler(this.txt_cuota_Click);
+            this.txt_cuota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cuota_KeyPress);
             // 
             // textBox3
             // 
@@ -174,6 +178,8 @@
             this.txt_matricula.Name = "txt_matricula";
             this.txt_matricula.Size = new System.Drawing.Size(115, 27);
             this.txt_matricula.TabIndex = 2;
+            this.txt_matricula.Click += new System.EventHandler(this.txt_matricula_Click);
+            this.txt_matricula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_matricula_KeyPress);
             // 
             // label5
             // 
@@ -237,6 +243,7 @@
             this.btn_cursos.Size = new System.Drawing.Size(57, 45);
             this.btn_cursos.TabIndex = 6;
             this.btn_cursos.UseVisualStyleBackColor = true;
+            this.btn_cursos.Click += new System.EventHandler(this.btn_cursos_Click);
             // 
             // FormModificarCurso
             // 
@@ -244,12 +251,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Cuota_System_2013.Properties.Resources.Fondo_20132;
             this.ClientSize = new System.Drawing.Size(944, 624);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpModificarCurso);
             this.Name = "FormModificarCurso";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormModificarCurso";
             this.Load += new System.EventHandler(this.FormModificarCurso_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.grpModificarCurso.ResumeLayout(false);
+            this.grpModificarCurso.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictur_logo)).EndInit();
             this.ResumeLayout(false);
 
@@ -257,7 +265,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpModificarCurso;
         private System.Windows.Forms.TextBox txt_montoExamen;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_idCurso;

@@ -104,10 +104,9 @@ namespace Cuota_System_2013
             alumno.IdGrupoFamiliar = 1;
             
             negAlumno.altaALumno(alumno);
-
-            Funciones.Funciones limpiar = new Funciones.Funciones();
-            limpiar.limpiarCampos(groupBox1, txt_nombre);
-            limpiar.limpiarCampos(grp_datosEspeciales, txt_nombre);
+           
+            Funciones.limpiarCampos(groupBox1, txt_nombre);
+            Funciones.limpiarCampos(grp_datosEspeciales, txt_nombre);
         }
 
         private void datosIniciales() {
@@ -170,27 +169,19 @@ namespace Cuota_System_2013
             grp_aluEspecial.Size = new Size(135, 60);
             txt_valExaFinal.Text = "";
             txt_valHora.Text = "";
-
-            Funciones.Funciones limpiar = new Funciones.Funciones();
-            limpiar.limpiarCampos(groupBox1, txt_nombre);
-            limpiar.limpiarCampos(grp_datosEspeciales, txt_nombre);            
-        }
-
-        private void campoSoloNumeros(KeyPressEventArgs e) {
-            if (!(char.IsControl(e.KeyChar) || char.IsDigit(e.KeyChar)))
-            {
-                e.Handled = true;
-            }
-        }
+                        
+            Funciones.limpiarCampos(groupBox1, txt_nombre);
+            Funciones.limpiarCampos(grp_datosEspeciales, txt_nombre);            
+        }        
 
         private void txt_dni_KeyPress(object sender, KeyPressEventArgs e)
         {
-            campoSoloNumeros(e);
+            Funciones.campoSoloNumeros(e);
         }
 
         private void txt_telefono_KeyPress(object sender, KeyPressEventArgs e)
         {
-            campoSoloNumeros(e);
+            Funciones.campoSoloNumeros(e);
         }
         
     }

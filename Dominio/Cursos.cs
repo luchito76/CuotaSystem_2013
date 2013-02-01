@@ -60,5 +60,10 @@ namespace Dominio
             get { return matricula; }
             set { matricula = value; }
         }
+
+        public override string ToString()
+        {
+            return String.Format("{0}", Matricula.ValorMatricula.ToString());
+        }
     }
 }

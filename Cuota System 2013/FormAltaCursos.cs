@@ -24,6 +24,7 @@ namespace Cuota_System_2013
             Cursos curso = new Cursos();
             Matricula matricula = new Matricula();
             Examen examen = new Examen();
+
             curso.Matricula = matricula;
             curso.Examen = examen;
 
@@ -35,9 +36,8 @@ namespace Cuota_System_2013
             curso.FechaFin = Convert.ToDateTime(dtp_fFin.Text);
             
             negoCurso.crearCurso(curso);
-
-            Funciones.Funciones limpiar = new Funciones.Funciones();
-            limpiar.limpiarCampos(grp_altaCurso, txt_descripcion);
+                        
+            Funciones.limpiarCampos(grp_altaCurso, txt_descripcion);
         }
         
         
