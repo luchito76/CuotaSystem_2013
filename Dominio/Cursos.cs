@@ -60,5 +60,18 @@ namespace Dominio
             get { return matricula; }
             set { matricula = value; }
         }
+
+        private bool activo;
+
+        public bool Activo
+        {
+            get { return activo; }
+            set { activo = value; }
+        } 
+
+        public override string ToString()
+        {
+            return String.Format("{0}", Matricula.ValorMatricula.ToString());
+        }
     }
 }

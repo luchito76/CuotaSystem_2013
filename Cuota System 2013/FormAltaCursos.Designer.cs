@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             this.grp_altaCurso = new System.Windows.Forms.GroupBox();
-            this.txt_montoExamen = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dtp_fFin = new System.Windows.Forms.DateTimePicker();
             this.dtp_fInicio = new System.Windows.Forms.DateTimePicker();
             this.pictur_logo = new System.Windows.Forms.PictureBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.txt_cuota = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.txt_matricula = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +42,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_volver = new System.Windows.Forms.Button();
             this.btn_cursos = new System.Windows.Forms.Button();
+            this.maskMontoCuota = new System.Windows.Forms.MaskedTextBox();
+            this.maskMontoExamen = new System.Windows.Forms.MaskedTextBox();
+            this.maskMontoMatricula = new System.Windows.Forms.MaskedTextBox();
             this.grp_altaCurso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictur_logo)).BeginInit();
             this.SuspendLayout();
@@ -53,15 +53,15 @@
             // 
             this.grp_altaCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grp_altaCurso.BackColor = System.Drawing.Color.Transparent;
-            this.grp_altaCurso.Controls.Add(this.txt_montoExamen);
+            this.grp_altaCurso.Controls.Add(this.maskMontoMatricula);
+            this.grp_altaCurso.Controls.Add(this.maskMontoExamen);
+            this.grp_altaCurso.Controls.Add(this.maskMontoCuota);
             this.grp_altaCurso.Controls.Add(this.label6);
             this.grp_altaCurso.Controls.Add(this.dtp_fFin);
             this.grp_altaCurso.Controls.Add(this.dtp_fInicio);
             this.grp_altaCurso.Controls.Add(this.pictur_logo);
             this.grp_altaCurso.Controls.Add(this.txt_descripcion);
-            this.grp_altaCurso.Controls.Add(this.txt_cuota);
             this.grp_altaCurso.Controls.Add(this.textBox3);
-            this.grp_altaCurso.Controls.Add(this.txt_matricula);
             this.grp_altaCurso.Controls.Add(this.label5);
             this.grp_altaCurso.Controls.Add(this.label4);
             this.grp_altaCurso.Controls.Add(this.label3);
@@ -79,13 +79,6 @@
             this.grp_altaCurso.TabIndex = 1;
             this.grp_altaCurso.TabStop = false;
             this.grp_altaCurso.Text = "Alta de Cursos";
-            // 
-            // txt_montoExamen
-            // 
-            this.txt_montoExamen.Location = new System.Drawing.Point(224, 178);
-            this.txt_montoExamen.Name = "txt_montoExamen";
-            this.txt_montoExamen.Size = new System.Drawing.Size(120, 27);
-            this.txt_montoExamen.TabIndex = 3;
             // 
             // label6
             // 
@@ -129,26 +122,12 @@
             this.txt_descripcion.Size = new System.Drawing.Size(160, 27);
             this.txt_descripcion.TabIndex = 0;
             // 
-            // txt_cuota
-            // 
-            this.txt_cuota.Location = new System.Drawing.Point(224, 90);
-            this.txt_cuota.Name = "txt_cuota";
-            this.txt_cuota.Size = new System.Drawing.Size(120, 27);
-            this.txt_cuota.TabIndex = 1;
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(-7, -46);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 27);
             this.textBox3.TabIndex = 5;
-            // 
-            // txt_matricula
-            // 
-            this.txt_matricula.Location = new System.Drawing.Point(224, 134);
-            this.txt_matricula.Name = "txt_matricula";
-            this.txt_matricula.Size = new System.Drawing.Size(120, 27);
-            this.txt_matricula.TabIndex = 2;
             // 
             // label5
             // 
@@ -219,6 +198,30 @@
             this.btn_cursos.UseVisualStyleBackColor = true;
             this.btn_cursos.Click += new System.EventHandler(this.btn_cursos_Click);
             // 
+            // maskMontoCuota
+            // 
+            this.maskMontoCuota.Location = new System.Drawing.Point(224, 90);
+            this.maskMontoCuota.Mask = "000.00";
+            this.maskMontoCuota.Name = "maskMontoCuota";
+            this.maskMontoCuota.Size = new System.Drawing.Size(100, 27);
+            this.maskMontoCuota.TabIndex = 37;
+            // 
+            // maskMontoExamen
+            // 
+            this.maskMontoExamen.Location = new System.Drawing.Point(224, 178);
+            this.maskMontoExamen.Mask = "000.00";
+            this.maskMontoExamen.Name = "maskMontoExamen";
+            this.maskMontoExamen.Size = new System.Drawing.Size(100, 27);
+            this.maskMontoExamen.TabIndex = 38;
+            // 
+            // maskMontoMatricula
+            // 
+            this.maskMontoMatricula.Location = new System.Drawing.Point(224, 134);
+            this.maskMontoMatricula.Mask = "000.00";
+            this.maskMontoMatricula.Name = "maskMontoMatricula";
+            this.maskMontoMatricula.Size = new System.Drawing.Size(100, 27);
+            this.maskMontoMatricula.TabIndex = 39;
+            // 
             // FormAltaCursos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,15 +244,12 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grp_altaCurso;
-        private System.Windows.Forms.TextBox txt_montoExamen;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtp_fFin;
         private System.Windows.Forms.DateTimePicker dtp_fInicio;
         private System.Windows.Forms.PictureBox pictur_logo;
         private System.Windows.Forms.TextBox txt_descripcion;
-        private System.Windows.Forms.TextBox txt_cuota;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox txt_matricula;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -257,5 +257,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_volver;
         private System.Windows.Forms.Button btn_cursos;
+        private System.Windows.Forms.MaskedTextBox maskMontoMatricula;
+        private System.Windows.Forms.MaskedTextBox maskMontoExamen;
+        private System.Windows.Forms.MaskedTextBox maskMontoCuota;
     }
 }

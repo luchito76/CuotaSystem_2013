@@ -76,7 +76,7 @@
     <Compile Include="FormModificarCurso.Designer.cs">
       <DependentUpon>FormModificarCurso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Funciones\Funciones.cs" />
+    <Compile Include="Funciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAltaAlumno.resx">
