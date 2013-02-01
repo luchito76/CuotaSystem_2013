@@ -99,7 +99,8 @@ namespace Repositorio
                     curso.Matricula.ValorMatricula = Convert.ToDecimal(row["montoMatricula"]);                    
                     curso.Examen.ValorExamen = Convert.ToDecimal(row["montoExamen"]);
                     curso.FechaInicio = Convert.ToDateTime(row["fechaInicio"]);
-                    curso.FechaFin = Convert.ToDateTime(row["fechaFin"]);                    
+                    curso.FechaFin = Convert.ToDateTime(row["fechaFin"]);
+                    curso.Activo = Convert.ToBoolean(row["activo"]);
                     
                     traeCursos.Add(curso);
                 }

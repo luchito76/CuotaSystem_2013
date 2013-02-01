@@ -27,6 +27,9 @@ namespace Cuota_System_2013
             txt_montoExamen.Text = curso.Examen.ValorExamen.ToString("C2");
             dtp_fInicio.Text = curso.FechaInicio.ToShortDateString();
             dtp_fFin.Text = curso.FechaFin.ToShortDateString();
+            
+            Funciones.etiqueta(lblActivo, curso.Activo);
+           
         }
 
         private void FormModificarCurso_Load(object sender, EventArgs e)

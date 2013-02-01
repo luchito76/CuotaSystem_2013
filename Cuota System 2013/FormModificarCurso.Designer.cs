@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_volver = new System.Windows.Forms.Button();
             this.btn_cursos = new System.Windows.Forms.Button();
+            this.lblActivo = new System.Windows.Forms.Label();
             this.grpModificarCurso.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictur_logo)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +56,7 @@
             // 
             this.grpModificarCurso.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.grpModificarCurso.BackColor = System.Drawing.Color.Transparent;
+            this.grpModificarCurso.Controls.Add(this.lblActivo);
             this.grpModificarCurso.Controls.Add(this.txt_montoExamen);
             this.grpModificarCurso.Controls.Add(this.label7);
             this.grpModificarCurso.Controls.Add(this.lbl_idCurso);
@@ -245,6 +247,14 @@
             this.btn_cursos.UseVisualStyleBackColor = true;
             this.btn_cursos.Click += new System.EventHandler(this.btn_cursos_Click);
             // 
+            // lblActivo
+            // 
+            this.lblActivo.Location = new System.Drawing.Point(512, 294);
+            this.lblActivo.Name = "lblActivo";
+            this.lblActivo.Size = new System.Drawing.Size(86, 45);
+            this.lblActivo.TabIndex = 42;
+            this.lblActivo.Text = "label8";
+            // 
             // FormModificarCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,5 +294,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_volver;
         private System.Windows.Forms.Button btn_cursos;
+        private System.Windows.Forms.Label lblActivo;
     }
 }

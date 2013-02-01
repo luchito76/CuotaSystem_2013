@@ -20,7 +20,8 @@ namespace Cuota_System_2013
         }
 
         public void formatoValorEnPesos() {            
-            dgv_consCursos.Columns["Matricula"].DefaultCellStyle.Format = "C2";
+            dgv_consCursos.Columns["MontoCuota"].DefaultCellStyle.Format = "C2";
+            dgv_consCursos.Columns["Activo"].Visible = false;
         }
 
         private void FormConsultarCurso_Load(object sender, EventArgs e)
@@ -33,6 +34,7 @@ namespace Cuota_System_2013
 
         private void dgv_consCursos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            bool activo = false;
             Cursos curso = new Cursos();
             Matricula matricula = new Matricula();
             Examen examen = new Examen();
@@ -46,7 +48,8 @@ namespace Cuota_System_2013
             curso.Matricula.ValorMatricula = Funciones.ToDecimal(dgv_consCursos.Rows[e.RowIndex].Cells["Matricula"].Value.ToString());
             curso.Examen.ValorExamen = Funciones.ToDecimal(dgv_consCursos.Rows[e.RowIndex].Cells["Examen"].Value.ToString());
             curso.FechaInicio = Convert.ToDateTime(dgv_consCursos.CurrentRow.Cells["fechaInicio"].Value);
-            curso.FechaFin = Convert.ToDateTime(dgv_consCursos.CurrentRow.Cells["fechaFin"].Value); 
+            curso.FechaFin = Convert.ToDateTime(dgv_consCursos.CurrentRow.Cells["fechaFin"].Value);
+            curso.Activo = Convert.ToBoolean(dgv_consCursos.CurrentRow.Cells["Activo"].Value);
 
             FormModificarCurso modCurso = new FormModificarCurso();
             modCurso.modifCurso(curso);

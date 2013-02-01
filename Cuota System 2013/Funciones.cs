@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
+using System.Drawing;
 
 namespace Cuota_System_2013
 {
@@ -18,7 +19,7 @@ namespace Cuota_System_2013
         {
             foreach (Control c in caja.Controls)
             {
-                if ((c is TextBox) || (c is ComboBox))
+                if ((c is TextBox) || (c is ComboBox) || (c is MaskedTextBox))
                 {
                     c.Text = "";
                     txt.Focus();
@@ -50,7 +51,20 @@ namespace Cuota_System_2013
                 return 0;
             else
                 return Decimal.Parse(Value.Replace(" ", ""), NumberStyles.AllowThousands | NumberStyles.AllowDecimalPoint | NumberStyles.AllowCurrencySymbol);
-        }       
+        }
+
+        public static void etiqueta(Label label, bool activo) {
+            if (activo == true)
+            {
+                label.BackColor = Color.Green;
+                label.Text = "Activo";
+            }
+            else {
+                label.BackColor = Color.Red;
+                label.Text = "Inactivo";
+            }
+            
+        }
 
     }
 }

@@ -29,9 +29,9 @@ namespace Cuota_System_2013
             curso.Examen = examen;
 
             curso.Descripcion = txt_descripcion.Text;
-            curso.MontoCuota = Convert.ToDecimal(txt_cuota.Text);            
-            curso.Matricula.ValorMatricula = Convert.ToDecimal(txt_matricula.Text);            
-            curso.Examen.ValorExamen = Convert.ToDecimal(txt_montoExamen.Text);
+            curso.MontoCuota = Convert.ToDecimal(maskMontoCuota.Text);            
+            curso.Matricula.ValorMatricula = Convert.ToDecimal(maskMontoMatricula.Text);            
+            curso.Examen.ValorExamen = Convert.ToDecimal(maskMontoExamen.Text);
             curso.FechaInicio = Convert.ToDateTime(dtp_fInicio.Text);
             curso.FechaFin = Convert.ToDateTime(dtp_fFin.Text);
             
